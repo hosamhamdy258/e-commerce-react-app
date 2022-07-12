@@ -39,7 +39,7 @@ export function Counter() {
                 </button>
 
                 <button
-                  className="btn btn-info mx-2"
+                  className="btn btn-info mx-2 my-1"
                   onClick={() => dispatch(decrement())}
                 >
                   Decrement
