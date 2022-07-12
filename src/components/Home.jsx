@@ -1,7 +1,10 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { NavLink } from "react-router-dom";
 
 export default function Home({ productList }) {
-  console.log(productList);
+  // console.log(productList);
   return (
     <>
       {/* Start Slider */}
@@ -34,9 +37,9 @@ export default function Home({ productList }) {
                         impedit sequi.
                       </p>
                       <div className="btn-box">
-                        <a href="" className="btn1">
+                        <NavLink className="nav-link btn1" to="/Products">
                           Shop Now
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </div>
@@ -61,9 +64,9 @@ export default function Home({ productList }) {
                         impedit sequi.
                       </p>
                       <div className="btn-box">
-                        <a href="" className="btn1">
+                        <NavLink className="nav-link btn1" to="/Products">
                           Shop Now
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </div>
@@ -88,9 +91,9 @@ export default function Home({ productList }) {
                         impedit sequi.
                       </p>
                       <div className="btn-box">
-                        <a href="" className="btn1">
+                        <NavLink className="nav-link btn1" to="/Products">
                           Shop Now
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </div>
@@ -171,14 +174,47 @@ export default function Home({ productList }) {
                   Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem
                   similique ex unde!
                 </p>
-                <a href="">Shop Now</a>
+                <NavLink className="nav-link btn1" to="/Products">
+                  Shop Now
+                </NavLink>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* end arrival section */}
+
+      {/* Products section */}
+      <div className="container mt-5">
+        <div className="row">
+          {productList &&
+            productList.map((item) => {
+              return (
+                <div className="col-3 card mt-2" style={{ height: "600px" }}>
+                  <img
+                    id={item.id}
+                    src={item.images[0]}
+                    className="card-img-top clickToDetails2 img-thumbnail"
+                    alt={item.title}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title slideProductName">
+                      {item.title}
+                    </h5>
+                    <Card.Text className="card-text pb-4">
+                      {item.description}
+                    </Card.Text>
+                    <h4 className="card-text card-price">{item.price} EGP</h4>
+                    <Button variant="primary card-cart">
+                      <i className="fa-solid fa-cart-plus"></i>
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      {/* End Products section */}
     </>
   );
 }
