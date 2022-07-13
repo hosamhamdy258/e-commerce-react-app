@@ -3,11 +3,13 @@ import axios from "axios";
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async (_, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
       const response = await axios.get("https://dummyjson.com/products");
       return response.data;
     } catch (error) {
-      console.error(error);
+      console.error(rejectWithValue);
+      return rejectWithValue(error);
     }
   }
 );
@@ -22,11 +24,15 @@ const productsSlice = createSlice({
     },
   },
   extraReducers: {
-    [getProducts.pending]: (state, action) => {},
+    [getProducts.pending]: (state, action) => {
+      console.log("pend");
+    },
     [getProducts.fulfilled]: (state, action) => {
       state.products = action.payload.products;
     },
-    [getProducts.rejected]: (state, action) => {},
+    [getProducts.rejected]: (state, action) => {
+      console.log("failed");
+    },
   },
 });
 export default productsSlice.reducer;
