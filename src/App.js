@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>random text for testing</h1>
+      {/* <h1>random text for testing</h1> */}
       {/* {state.products &&
         state.products.map((item) => {
           return <li key={item.id}>{item.title}</li>;
@@ -34,7 +34,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
