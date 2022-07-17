@@ -28,7 +28,6 @@ function App() {
     <div className="App">
       <NavBar />
 
-
       <Routes>
         <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home />} />
