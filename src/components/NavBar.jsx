@@ -1,21 +1,17 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { NavLink } from "react-router-dom";
-
-
 
 import Button from "react-bootstrap/esm/Button";
 
 import { loginUser, logoutUser } from "../store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import NavLink from "react-bootstrap/esm/NavLink";
 
 export default function NavBar() {
-
   const state = useSelector((state) => state.authSlice);
   const state2 = useSelector((state) => state.cartSlice);
 
@@ -60,20 +56,27 @@ export default function NavBar() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <NavLink className="nav-link" to="/Home">Home</NavLink>
+                  <NavLink className="nav-link" to="/home">
+                    Home
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/Products">Products</NavLink>
+                  <NavLink className="nav-link" to="/products">
+                    Products
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   {/* <NavLink className="nav-link" to="/About us">About us</NavLink> */}
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/">Login</NavLink>
+                  <NavLink className="nav-link" to="/">
+                    Login
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/Home"><i className="fa-solid fa-cart-plus"></i></NavLink>
-                  
+                  <NavLink className="nav-link" to="/Home">
+                    <i className="fa-solid fa-cart-plus"></i>
+                  </NavLink>
                 </li>
               </ul>
             </div>

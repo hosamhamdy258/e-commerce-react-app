@@ -1,10 +1,10 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import Mycarousel from "./Mycarousel";
-
-import React from "react";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../store/cartSlice";
+import { NavLink } from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
 export default function Home({ productList }) {
   console.log(productList);
@@ -203,23 +203,23 @@ export default function Home({ productList }) {
           return <li key={item.id}>{item.title}</li>;
         })} */}
 
-        {/* <!-- Slider Start  --> */}
-        <Mycarousel />
-        {/* <!-- Slider End  --> */}
+      {/* <!-- Slider Start  --> */}
+      <Mycarousel />
+      {/* <!-- Slider End  --> */}
 
-        {/* <!-- Banners Start  --> */}
+      {/* <!-- Banners Start  --> */}
 
       <section id="banners">
         {/* <!-- Banners 1  --> */}
-        <div id="banner-1" class="container-fluid">
-          <div class="row text-center text-light pt-5 pb-5  mt-5">
-            <h5 class="display-6 fw-normal">Repair Services</h5>
-            <h2 class="display-4 fw-normal">
-              Up to <span class="text-danger fw-bold">70% Off</span> - All
+        <div id="banner-1" className="container-fluid">
+          <div className="row text-center text-light pt-5 pb-5  mt-5">
+            <h5 className="display-6 fw-normal">Repair Services</h5>
+            <h2 className="display-4 fw-normal">
+              Up to <span className="text-danger fw-bold">70% Off</span> - All
               Glasses & TV Accessories
             </h2>
             <a
-              class="col-3 col-md-3  btn btn-outline-danger mt-4 pb-0 d-block mx-auto "
+              className="col-3 col-md-3  btn btn-outline-danger mt-4 pb-0 d-block mx-auto "
               href="#"
             >
               <h5>Explore More</h5>
@@ -227,23 +227,23 @@ export default function Home({ productList }) {
           </div>
         </div>
         {/* <!-- Small banners --> */}
-        <div id="banners-container" class="container">
-          <div class="row text-start pt-5 pb-5 m-auto justify-content-sm-between">
-            <div class="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
-              <h2 class="display-6 fw-normal text-light">Season Sale</h2>
-              <p class="display-6 fw-normal  text-danger">
+        <div id="banners-container" className="container">
+          <div className="row text-start pt-5 pb-5 m-auto justify-content-sm-between">
+            <div className="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
+              <h2 className="display-6 fw-normal text-light">Season Sale</h2>
+              <p className="display-6 fw-normal  text-danger">
                 Black-Friday Collection - 50% Off
               </p>
             </div>
-            <div class="ban-item col-10 col-lg-4 pt-3 pb-5 m-auto mt-5">
-              <h2 class="display-6 fw-normal text-light">NEW LapTops</h2>
-              <p class="display-6 fw-normal  text-danger">New Gaming Laptops</p>
+            <div className="ban-item col-10 col-lg-4 pt-3 pb-5 m-auto mt-5">
+              <h2 className="display-6 fw-normal text-light">NEW LapTops</h2>
+              <p className="display-6 fw-normal  text-danger">New Gaming Laptops</p>
             </div>
-            <div class="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
-              <h2 class="display-6 fw-normal text-light">
+            <div className="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
+              <h2 className="display-6 fw-normal text-light">
                 New Glasses Collection
               </h2>
-              <p class="display-6 fw-normal  text-danger">Best Offers</p>
+              <p className="display-6 fw-normal  text-danger">Best Offers</p>
             </div>
           </div>
         </div>
@@ -251,17 +251,17 @@ export default function Home({ productList }) {
       {/* <!-- Banners End  --> */}
 
       {/* <!-- Newsletter Start  --> */}
-      <section id="subinv" class="bg-light py-5">
-        <div class="container-fluid py-5 ">
-          <div class="row text-center text-md-start justify-content-center align-items-center">
-            <div class="col-md-6 ">
-              <div class="display-2">We offer the best</div>
-              <div class="display-4 fw-bolder text-success">Quality</div>
+      <section id="subinv" className="bg-light py-5">
+        <div className="container-fluid py-5 ">
+          <div className="row text-center text-md-start justify-content-center align-items-center">
+            <div className="col-md-6 ">
+              <div className="display-2">We offer the best</div>
+              <div className="display-4 fw-bolder text-success">Quality</div>
             </div>
 
-            <div class="col-4 col-md-2">
+            <div className="col-4 col-md-2">
               <img
-                class="img-fluid"
+                className="img-fluid"
                 src="assist/imgs/banner/quality.png"
                 alt=""
               />
@@ -272,31 +272,31 @@ export default function Home({ productList }) {
 
       <secction
         id="newsletter"
-        class="d-flex align-items-center mb-5 justify-content-between pt-4 pb-4"
+        className="d-flex align-items-center mb-5 justify-content-between pt-4 pb-4"
       >
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12 col-md-6 text-light">
-              <h4 class="display-4">Sign Up For Newsletters</h4>
-              <p class="display-6">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-md-6 text-light">
+              <h4 className="display-4">Sign Up For Newsletters</h4>
+              <p className="display-6">
                 Get E-mail updates about our lastest shop and
-                <span class="text-danger fw-semibold">special offers.</span>
+                <span className="text-danger fw-semibold">special offers.</span>
               </p>
             </div>
-            <div class=" col-12 col-md-6 m-auto">
-              <form class="row mt-5 col-12  m-auto">
-                <div class="col-10 col-md-9 m-auto">
+            <div className=" col-12 col-md-6 m-auto">
+              <form className="row mt-5 col-12  m-auto">
+                <div className="col-10 col-md-9 m-auto">
                   <input
                     type="email"
-                    class="p-3 form-control mb-3 d-block m-auto"
+                    className="p-3 form-control mb-3 d-block m-auto"
                     id="Email"
                     value=""
                   />
                 </div>
 
-                <div class=" col-12 col-md-3">
+                <div className=" col-12 col-md-3">
                   <input
-                    class="d-block m-auto outline-danger p-3 mb-3 fw-bold"
+                    className="d-block m-auto outline-danger p-3 mb-3 fw-bold"
                     type="button"
                     value="Sign Up"
                   />
@@ -307,7 +307,6 @@ export default function Home({ productList }) {
         </div>
       </secction>
       {/* <!-- Newsletter End  --> */}
-
 
       {/* end arrival section */}
 

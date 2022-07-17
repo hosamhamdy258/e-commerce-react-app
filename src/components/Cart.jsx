@@ -29,7 +29,7 @@ export default function Cart({ productList }) {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-file-excel"
+                      className="bi bi-file-excel"
                       viewBox="0 0 16 16"
                     >
                       <path d="M5.18 4.616a.5.5 0 0 1 .704.064L8 7.219l2.116-2.54a.5.5 0 1 1 .768.641L8.651 8l2.233 2.68a.5.5 0 0 1-.768.64L8 8.781l-2.116 2.54a.5.5 0 0 1-.768-.641L7.349 8 5.116 5.32a.5.5 0 0 1 .064-.704z" />
@@ -51,26 +51,26 @@ export default function Cart({ productList }) {
       <br />
       <section
         id="cart-add"
-        class="div1 row bg-light p-2 mx-2 align-content-center justify-content-between"
+        className="div1 row bg-light p-2 mx-2 align-content-center justify-content-between"
       >
-        <div id="coupon" class="col-12 col-md-6 p-2">
-          <h3 class="bg-info text-light p-2">Apply Coupon</h3>
+        <div id="coupon" className="col-12 col-md-6 p-2">
+          <h3 className="bg-info text-light p-2">Apply Coupon</h3>
           <div>
             <input
-              class="form-control form-control-lg"
+              className="form-control form-control-lg"
               type="text"
               placeholder="Enter your coupon"
             />
-            <div class="d-grid gap-2 p-3">
-              <button class="btn btn-info" type="button">
+            <div className="d-grid gap-2 p-3">
+              <button className="btn btn-info" type="button">
                 Apply
               </button>
             </div>
           </div>
         </div>
-        <div id="subtotal" class="col-12 col-md-6 p-2">
-          <h3 class="bg-info text-light p-2">Cart total</h3>
-          <table class="table">
+        <div id="subtotal" className="col-12 col-md-6 p-2">
+          <h3 className="bg-info text-light p-2">Cart total</h3>
+          <table className="table">
             <tr>
               <td>Cart Subtotal</td>
               <td id="total1">0 EGP</td>
@@ -84,8 +84,8 @@ export default function Cart({ productList }) {
             </td>
             <td id="total2">0 EGP</td>
           </table>
-          <div class="d-grid gap-2 p-3">
-            <button class="btn btn-info" type="button">
+          <div className="d-grid gap-2 p-3">
+            <button className="btn btn-info" type="button">
               {" "}
               Proceed to check out{" "}
             </button>
