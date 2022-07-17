@@ -3,16 +3,19 @@ import axios from "axios";
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async (_, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.get("https://dummyjson.com/products");
+      const response = await axios.get("http://localhost:3010/products");
+      // console.log(response.data);
       return response.data;
     } catch (error) {
-      console.error(error);
+      console.error(rejectWithValue);
+      return rejectWithValue(error);
     }
   }
 );
 
-const initialState = {};
+const initialState = { products: [], isLoading: false };
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -22,11 +25,15 @@ const productsSlice = createSlice({
     },
   },
   extraReducers: {
+    // get product from api server
     [getProducts.pending]: (state, action) => {},
     [getProducts.fulfilled]: (state, action) => {
-      state.products = action.payload.products;
+      state.products = action.payload;
     },
-    [getProducts.rejected]: (state, action) => {},
+    [getProducts.rejected]: (state, action) => {
+      // show erorr tooltip at top of screen
+      // state.isLoading = true;
+    },
   },
 });
 export default productsSlice.reducer;

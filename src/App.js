@@ -11,23 +11,22 @@ import Cart from "./components/Cart";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
+import { delCart, getCart } from "./store/cartSlice";
 
 function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.productsSlice);
-  console.log(state.products);
+  // console.log(state.products);
+
   useEffect(() => {
+    dispatch(delCart());
+    // dispatch(getCart());
     dispatch(getProducts());
   }, [dispatch]);
 
   return (
     <div className="App">
       <NavBar />
-      <h1>random text for testing</h1>
-      {/* {state.products &&
-        state.products.map((item) => {
-          return <li key={item.id}>{item.title}</li>;
-        })} */}
 
       <Routes>
         <Route path="/" element={<Home productList={state.products} />} />
