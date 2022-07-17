@@ -297,6 +297,8 @@ export default function Home({ productList }) {
         </div>
       </secction>
       {/* <!-- Newsletter End  --> */}
+
+      {/* end arrival section */}
     </>
   );
 }

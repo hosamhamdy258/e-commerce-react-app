@@ -27,8 +27,13 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Home />
+      {/* {state.products &&
+        state.products.map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })} */}
 
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -37,7 +42,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
