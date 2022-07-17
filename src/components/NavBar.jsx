@@ -1,3 +1,4 @@
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Container from "react-bootstrap/Container";
@@ -6,7 +7,34 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
 
+
+
+import Button from "react-bootstrap/esm/Button";
+
+import { loginUser, logoutUser } from "../store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 export default function NavBar() {
+
+  const state = useSelector((state) => state.authSlice);
+  const state2 = useSelector((state) => state.cartSlice);
+
+  const dispatch = useDispatch();
+  const myinfo = {
+    email: "hosam@gmail.com",
+    password: "pass",
+  };
+  let cartCount = 0;
+  state2.cart.forEach((element) => {
+    cartCount += element.count;
+  });
+  ////////////////////
+  const login_handler = () => {
+    dispatch(loginUser(myinfo));
+  };
+  const logout_handler = () => {
+    dispatch(logoutUser());
+  };
   return (
     <>
       <header className="header_section">

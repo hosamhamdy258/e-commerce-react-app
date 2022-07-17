@@ -11,12 +11,16 @@ import Cart from "./components/Cart";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
+import { delCart, getCart } from "./store/cartSlice";
 
 function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.productsSlice);
-  console.log(state.products);
+  // console.log(state.products);
+
   useEffect(() => {
+    dispatch(delCart());
+    // dispatch(getCart());
     dispatch(getProducts());
   }, [dispatch]);
 
@@ -28,7 +32,7 @@ function App() {
         <Route path="/home" element={<Home productList={state.products} />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
