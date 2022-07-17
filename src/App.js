@@ -28,12 +28,13 @@ function App() {
     <div className="App">
       <NavBar />
 
+
       <Routes>
         <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
