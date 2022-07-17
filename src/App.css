@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+nav .logo {
+  color: rgb(225, 68, 37);
+}
+/* Banners start*/
+#banner-1 {
+  background-image: url(/public/assist/imgs/banner/b2.jpg);
+}
+#banners-container .ban-item {
+  background-image: url(/public/assist/imgs/banner/190914.jpg);
+  background-position: 0% 0%;
+  background-size: cover;
+  height: 30vh;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 5px;
+}
+#banners-container .ban-item:nth-child(2) {
+  background-image: url(/public/assist/imgs/banner/laptop.jpg);
+  background-position: 0% 0%;
+  background-size: cover;
+}
+#banners-container .ban-item:nth-child(3) {
+  background-image: url(/public/assist/imgs/banner/b18.jpg);
+  background-position: 70% 0%;
+  background-size: cover;
+}
+
+/* Banners End */
+/* Newsletters Start */
+
+#newsletter {
+  background-image: url(/public/assist/imgs/banner/b14.jpg);
+}
+#newsletter input {
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+#newsletter .button:hover {
+  color: white;
+  background-color: var(--secondColor) !important;
+}
+/* Newsletters End */
