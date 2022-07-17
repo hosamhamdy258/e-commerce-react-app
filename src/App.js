@@ -11,7 +11,7 @@ import Cart from "./components/Cart";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
-import { getCart } from "./store/cartSlice";
+import { delCart, getCart } from "./store/cartSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,7 +19,8 @@ function App() {
   // console.log(state.products);
 
   useEffect(() => {
-    dispatch(getCart());
+    dispatch(delCart());
+    // dispatch(getCart());
     dispatch(getProducts());
   }, [dispatch]);
 

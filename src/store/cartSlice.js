@@ -1,6 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+export const delCart = createAsyncThunk("cart/delCart", async (_, thunkAPI) => {
+  // const { rejectWithValue } = thunkAPI;
+  try {
+    for (let index = 0; index < 31; index++) {
+      axios.delete(`http://localhost:3010/cart/${index}`);
+    }
+    // const response = await axios.delete(`http://localhost:3010/cart/${id}`);
+    // return response.data;
+  } catch (error) {
+    // console.error(rejectWithValue);
+    // return rejectWithValue(error);
+  }
+});
+
 export const getCart = createAsyncThunk("cart/getCart", async (_, thunkAPI) => {
   const { rejectWithValue } = thunkAPI;
   try {
@@ -145,6 +159,11 @@ const cartSlice = createSlice({
       state.cart = action.payload.data;
     },
     [removeProduct.rejected]: (state, action) => {},
+    [delCart.pending]: (state, action) => {},
+    [delCart.fulfilled]: (state, action) => {
+      // state.cart = action.payload.data;
+    },
+    [delCart.rejected]: (state, action) => {},
   },
 });
 // export const {} = cartSlice.actions;
