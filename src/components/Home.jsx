@@ -1,5 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
+import Mycarousel from "./Mycarousel";
 
 
 export default function Home({ productList }) {
@@ -180,12 +181,17 @@ export default function Home({ productList }) {
         </div>
       </section>
       {/* end arrival section */}
-      {productList &&
+
+      {/* {productList &&
         productList.map((item) => {
           return <li key={item.id}>{item.title}</li>;
-        })}
+        })} */}
 
-              {/* <!-- Banners Start  --> */}
+        {/* <!-- Slider Start  --> */}
+        <Mycarousel />
+        {/* <!-- Slider End  --> */}
+
+        {/* <!-- Banners Start  --> */}
 
         <section id="banners">
           {/* <!-- Banners 1  --> */}
