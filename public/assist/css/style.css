@@ -123,6 +123,10 @@ a:focus {
 
 .header_section {
     padding: 15px 0;
+  position: sticky;
+  top:0px;
+  z-index: 999;
+  background-color: white;
 }
 
 .header_section .container-fluid {

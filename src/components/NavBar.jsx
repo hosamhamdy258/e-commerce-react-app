@@ -1,14 +1,20 @@
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/esm/Button";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { NavLink } from "react-router-dom";
+
+
+
+import Button from "react-bootstrap/esm/Button";
+
 import { loginUser, logoutUser } from "../store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function NavBar() {
-  // console.log(state.products);
 
   const state = useSelector((state) => state.authSlice);
   const state2 = useSelector((state) => state.cartSlice);
@@ -29,14 +35,12 @@ export default function NavBar() {
   const logout_handler = () => {
     dispatch(logoutUser());
   };
-
   return (
     <>
       <header className="header_section">
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <a className="navbar-brand" href="index.html">
-              {/* <img width="200" src="/assist/images/logo3.png" alt="#" /> */}
+            <a className="navbar-brand" href="/Home#top">
               <span className="logo">EASY SHOP</span>
             </a>
             <button
@@ -56,24 +60,20 @@ export default function NavBar() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <a className="nav-link" href="index.html">
-                    Home <span className="sr-only">(current)</span>
-                  </a>
+                  <NavLink className="nav-link" to="/Home">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="product.html">
-                    Products
-                  </a>
+                  <NavLink className="nav-link" to="/Products">Products</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="blog_list.html">
-                    Contact
-                  </a>
+                  {/* <NavLink className="nav-link" to="/About us">About us</NavLink> */}
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="contact.html">
-                    About us
-                  </a>
+                  <NavLink className="nav-link" to="/">Login</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Home"><i className="fa-solid fa-cart-plus"></i></NavLink>
+                  
                 </li>
               </ul>
             </div>
