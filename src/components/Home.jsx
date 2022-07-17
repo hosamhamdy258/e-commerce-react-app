@@ -180,6 +180,10 @@ export default function Home({ productList }) {
         </div>
       </section>
       {/* end arrival section */}
+      {productList &&
+        productList.map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })}
 
               {/* <!-- Banners Start  --> */}
 
@@ -223,7 +227,7 @@ export default function Home({ productList }) {
 
         </section>
         {/* <!-- Banners End  --> */}
-
+  
           {/* <!-- Newsletter Start  --> */}
       <section id="subinv" class="bg-light py-5">
         <div class="container-fluid py-5 ">

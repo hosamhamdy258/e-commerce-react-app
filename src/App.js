@@ -23,7 +23,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <Home /> */}
       {/* {state.products &&
         state.products.map((item) => {
           return <li key={item.id}>{item.title}</li>;
