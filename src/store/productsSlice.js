@@ -5,7 +5,8 @@ export const getProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.get("https://dummyjson.com/products");
+      const response = await axios.get("http://localhost:3010/products");
+      // console.log(response.data);
       return response.data;
     } catch (error) {
       console.error(rejectWithValue);
@@ -14,7 +15,7 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-const initialState = {};
+const initialState = { products: [], isLoading: false };
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -24,14 +25,14 @@ const productsSlice = createSlice({
     },
   },
   extraReducers: {
-    [getProducts.pending]: (state, action) => {
-      console.log("pend");
-    },
+    // get product from api server
+    [getProducts.pending]: (state, action) => {},
     [getProducts.fulfilled]: (state, action) => {
-      state.products = action.payload.products;
+      state.products = action.payload;
     },
     [getProducts.rejected]: (state, action) => {
-      console.log("failed");
+      // show erorr tooltip at top of screen
+      // state.isLoading = true;
     },
   },
 });
