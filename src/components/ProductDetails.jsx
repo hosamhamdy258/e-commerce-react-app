@@ -29,16 +29,20 @@ export default function ProductDetails() {
       <Card className="p-3 bg-light">
         <Table bordered hover className="p-2">
           <tr>
-            <th>
-              <Table style={{ width: "45rem" }} bordered hover>
+            <th style={{ width: "45%" }}>
+              <Table bordered hover>
                 <tbody>
                   <tr>
-                    <td colSpan={3} rowSpan={3}>
+                    <td colSpan={3} rowSpan={3} style={{ width: "67%" }}>
                       <Card.Img
-                        style={{ width: "30rem" }}
                         variant="bottom"
                         src={obj.images[2]}
+                        className="my-3"
                       />
+                      <Card.Text>
+                        <b>Description: </b>
+                        {obj.description}
+                      </Card.Text>
                     </td>
                     <td>
                       <Card.Img src={obj.images[2]} />
@@ -57,7 +61,7 @@ export default function ProductDetails() {
                 </tbody>
               </Table>
             </th>
-            <th>
+            <th style={{ width: "40%" }}>
               <Card.Body>
                 <Card.Title>Product Name: {obj.title}</Card.Title>
               </Card.Body>
@@ -79,8 +83,8 @@ export default function ProductDetails() {
                   {obj.price}
                 </ListGroup.Item>
                 <ListGroup.Item className="card-text my-1">
-                  <b>Description: </b>
-                  {obj.description}
+                  <b>Stock: </b>
+                  {obj.stock}
                 </ListGroup.Item>
               </ListGroup>
               <Card.Body>
