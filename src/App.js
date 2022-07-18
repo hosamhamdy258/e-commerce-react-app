@@ -40,7 +40,6 @@ function App() {
         <Route path="/Products/Groceries" element={<Products productList={(state.products).filter(function (item) {return item.category ==='groceries';})}/>} />
         <Route path="/Products/Home-Decoration" element={<Products productList={(state.products).filter(function (item) {return item.category ==='home-decoration';})}/>} />
         <Route path="/Products/Fragrances" element={<Products productList={(state.products).filter(function (item) {return item.category ==='fragrances';})}/>} />
-
         <Route
           path="/products/:id"
           element={<ProductDetails productList={state.products} />}
@@ -49,9 +48,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Regform />} />
         <Route path="/test" element={<Logform />} />
-  
-       
-      
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
