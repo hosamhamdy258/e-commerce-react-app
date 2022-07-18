@@ -78,3 +78,8 @@ nav .logo {
   background-color: var(--secondColor) !important;
 }
 /* Newsletters End */
+
+/* slogan */
+#slogan{  
+  margin-top:  15rem !important;
+}
