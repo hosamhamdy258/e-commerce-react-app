@@ -4,14 +4,22 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../store/cartSlice";
 
 export default function ProductDetails({ productList }) {
   const { id } = useParams();
   // console.log(id);
   console.log(productList);
+
+  const dispatch = useDispatch();
   const item = productList.find((element) => {
     return element.id == id;
   });
+  const addButton = (item) => {
+    dispatch(addProduct(item));
+    // dispatch(getCart());
+  };
 
   return (
     <>
@@ -78,7 +86,9 @@ export default function ProductDetails({ productList }) {
                   {item.stock}
                 </ListGroup.Item>
                 <ListGroup.Item className="card-text my-1">
-                  <Button variant="primary">Add to cart</Button>
+                  <Button variant="primary" onClick={() => addButton(item)}>
+                    Add to cart
+                  </Button>
                 </ListGroup.Item>
               </ListGroup>
             </th>
