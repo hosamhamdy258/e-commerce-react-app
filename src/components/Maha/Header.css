@@ -1,0 +1,139 @@
+/*%%%%%%%%%%%%%%%%%%% Styling Head %%%%%%%%%%%%%%%%%%%%%%%%%*/
+.head{
+    background-color: #0f3460;
+    padding: 10px 0;
+    color: #fff;
+}
+.head i{
+    margin-right: 10px;
+}
+
+.head label{
+    margin-right: 30px;
+    font-size: 13px;
+}
+
+
+/* %%%%%%%%%%%%%%%%%%%%%%%% Styling Search %%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.search{
+    padding: 20px 0;
+}
+.search .logo img {
+    width: 55%;
+  }
+  .search .width {
+    width: 20%;
+  }
+  .search-box{
+    width: 80%;
+    border: 2px solid rgba(0, 0, 0, 0.1)
+  }
+  .search-box i{
+    width: 5%;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.5;
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+  .search-box input{
+    width: 100%;
+    padding: 10px;
+  }
+  ::placeholder{
+    font-size: 15px;
+  }
+  .search-box span{
+    width: 20%;
+    opacity: 0.6;
+    padding: 10px;
+}
+
+.cart{
+    position: relative;
+}
+.search .cart span{
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #eb81a9;
+    font-size: 14px;
+    color: #fff;
+}
+.f_flex{
+    justify-content: start;
+}
+
+.categories{
+    background-color: rgb(207, 218, 228);
+    padding: 0 30px;
+    border-radius: 4px;
+    height: 6vh;
+    padding-top: 6px;
+    margin-top: 5px;
+}
+.categories span{
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: -1px;
+}
+.categories h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+.categories h4 i{
+    margin-left: 10px;
+}
+.myFilter{
+    height: 9vh;
+    box-shadow: -.5px 13px 15px -5px rgba(0, 0, 0, 0.1);
+}
+.myFilter ul{
+    line-height: 9vh;
+}
+.myFilter ul li{
+    margin-left: 30px;
+}
+
+.myFilter ul li a{
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.myFilter ul li a:hover{
+    color: #eb81a9;
+}
+
+.open{
+    display: none;
+}
+input,
+button{
+border: none;
+outline: none;
+background-color: none;
+}
+
+.row{
+    /* width: 50%; */
+}
+.icon-circle{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(226, 225, 225, 0.548);
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    -ms-grid-row-align: start;
+}
