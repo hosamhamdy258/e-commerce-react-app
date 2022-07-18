@@ -33,13 +33,9 @@ export default function Login() {
     <Fragment>
       <div className="container-fluid my-md-5">
         <div className="row">
-          <div className="col-md-6 mt-md-5">
-            <br />
-            <br />
-            <br />
-            <br />
+          <div id="slogan" className=" col-md-6 mt-md-5 d-none d-md-block ">
             <span className="display-1 mt-5"> Easy Shop</span>
-            <span className="text-danger"> A shop that cares about you</span>
+            <span className="text-danger "> A shop that cares about you</span>
           </div>
           <div className="col-md-4 my-5 container-fluid">
             {/* <div className="mb-2">
@@ -55,7 +51,7 @@ export default function Login() {
               className="my-md-5 d-grid gap-2 p-3 bg-light"
             >
               <Form.Text className="text-muted mb-3">
-                Welcome, please enter your info:
+                Welcome, please enter your login info:
               </Form.Text>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>

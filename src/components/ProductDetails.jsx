@@ -4,14 +4,22 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../store/cartSlice";
 
 export default function ProductDetails({ productList }) {
   const { id } = useParams();
   // console.log(id);
   console.log(productList);
+
+  const dispatch = useDispatch();
   const item = productList.find((element) => {
     return element.id == id;
   });
+  const addButton = (item) => {
+    dispatch(addProduct(item));
+    // dispatch(getCart());
+  };
 
   return (
     <>
@@ -25,14 +33,20 @@ export default function ProductDetails({ productList }) {
                     <td colSpan={3} rowSpan={3} style={{ width: "67%" }}>
                       <Card.Img
                         variant="bottom"
-                        src={item.images[2]}
+                        src={item.thumbnail}
                         className="my-3"
                       />
+                      <hr></hr>
                       <Card.Text>
                         <b>Description: </b>
                         {item.description}
                       </Card.Text>
                     </td>
+                    <td>
+                      <Card.Img src={item.images[1]} />
+                    </td>
+                  </tr>
+                  <tr>
                     <td>
                       <Card.Img src={item.images[2]} />
                     </td>
@@ -42,19 +56,15 @@ export default function ProductDetails({ productList }) {
                       <Card.Img src={item.images[3]} />
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <Card.Img src={item.images[4]} />
-                    </td>
-                  </tr>
                 </tbody>
               </Table>
             </th>
             <th style={{ width: "40%" }}>
-              <Card.Body>
-                <Card.Title>Product Name: {item.title}</Card.Title>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
+              <ListGroup className="list-group-flush p-5">
+                <ListGroup.Item className="card-subtitle mb-2 text-muted">
+                  <b>Product Name: </b>
+                  {item.title}
+                </ListGroup.Item>
                 <ListGroup.Item className="card-subtitle mb-2 text-muted">
                   <b>category: </b>
                   {item.category}
@@ -75,10 +85,12 @@ export default function ProductDetails({ productList }) {
                   <b>Stock: </b>
                   {item.stock}
                 </ListGroup.Item>
+                <ListGroup.Item className="card-text my-1">
+                  <Button variant="primary" onClick={() => addButton(item)}>
+                    Add to cart
+                  </Button>
+                </ListGroup.Item>
               </ListGroup>
-              <Card.Body>
-                <Button variant="primary">Add to cart</Button>
-              </Card.Body>
             </th>
           </tr>
         </Table>
