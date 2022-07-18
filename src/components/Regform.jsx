@@ -2,6 +2,8 @@ import React, { Fragment, useRef } from 'react'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from 'react-redux';
+import { NavLink } from "react-router-dom";
+
 
 export default function Regform() {
     const email = useRef(null);
@@ -24,11 +26,7 @@ export default function Regform() {
     <Fragment>
       <div className="container-fluid my-md-5">
         <div className="row">
-          <div className="col-md-6 mt-md-5">
-            <br />
-            <br />
-            <br />
-            <br />
+          <div id='slogan' className="col-md-6 mt-md-5 d-none d-md-block">
             <span className="display-1 mt-5"> Easy Shop</span>
             <span className="text-danger"> A shop that cares about you</span>
           </div>
@@ -46,7 +44,7 @@ export default function Regform() {
               className="my-md-5 d-grid gap-2 p-3 bg-light"
             >
               <Form.Text className="text-muted mb-3">
-                Welcome, please enter your info:
+                Welcome, please register your info:
               </Form.Text>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -68,7 +66,11 @@ export default function Regform() {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
               <Form.Text className="text-muted mb-3">
-              Already a user? Sign in  <Button variant="warning"> here</Button>
+              Already a user? Sign in  <Button className="mx-3" size="sm" variant="warning"> 
+                  <NavLink className="nav-link" to="/login">
+                    here
+                  </NavLink>               
+              </Button> 
               </Form.Text>
               <Button
                 variant="danger"
@@ -76,7 +78,7 @@ export default function Regform() {
                 size="lg"
                 className="btn btn-primary "
               >
-                Login
+                Register
               </Button>
             </Form>
 
