@@ -3,11 +3,15 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../store/authSlice";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Regform() {
   const state = useSelector((state) => state.authSlice);
+  const navigate = useNavigate();
+
+  const navigateHome = () => {
+    navigate("/");
+  };
 
   const email = useRef(null);
   const password = useRef(null);
@@ -29,7 +33,7 @@ export default function Regform() {
     <Fragment>
       <div className="container-fluid my-md-5">
         <div className="row">
-          <div id='slogan' className="col-md-6 mt-md-5 d-none d-md-block">
+          <div id="slogan" className="col-md-6 mt-md-5 d-none d-md-block">
             <span className="display-1 mt-5"> Easy Shop</span>
             <span className="text-danger"> A shop that cares about you</span>
           </div>
@@ -76,7 +80,7 @@ export default function Regform() {
                   </NavLink>
                 </Button>
               </Form.Text>
-                {state.regmsg && <span>{state.regmsg}</span>}
+              {state.regmsg && <span>{state.regmsg}</span>}
               <Button
                 variant="danger"
                 type="submit"
@@ -85,6 +89,7 @@ export default function Regform() {
               >
                 Register
               </Button>
+              {state.isLogged && navigateHome()}
             </Form>
           </div>
         </div>

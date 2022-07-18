@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     // dispatch(delCart());
-    // dispatch(getCart());
+    dispatch(getCart());
     dispatch(getProducts());
   }, [dispatch]);
 
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home productsSlice={state.products} />} />
+        <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home productList={state.products} />} />
         <Route path="/products" element={<Products />} />
         <Route

@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
 export default function Home({ productList }) {
-  console.log(productList);
+  // console.log(productList);
   const dispatch = useDispatch();
 
   const addButton = (item) => {
@@ -20,7 +20,7 @@ export default function Home({ productList }) {
     // dispatch(getCart());
   };
   return (
-    <>  
+    <>
       {/* Start Slider */}
 
       <section className="slider_section ">
@@ -321,7 +321,7 @@ export default function Home({ productList }) {
               return (
                 <div
                   key={item.id}
-                  className="col-3 card m-2 bg-opacity-10 bg-primary"
+                  className="col-3 card my-1 bg-opacity-10 bg-primary"
                   style={{ height: "600px" }}
                 >
                   <NavLink className="nav-link" to={`/products/${item.id}`}>
