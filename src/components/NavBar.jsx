@@ -65,13 +65,20 @@ export default function NavBar() {
                   {/* <NavLink className="nav-link" to="/About us">About us</NavLink> */}
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">
-                    Login
-                  </NavLink>
+                  {state.isLogged ? (
+                    <NavLink className="nav-link" to="">
+                      <span>Welcome {state.user.email}</span>{" "}
+                    </NavLink>
+                  ) : (
+                    <NavLink className="nav-link" to="/login">
+                      login
+                    </NavLink>
+                  )}
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/cart">
                     <i className="fa-solid fa-cart-plus"></i>
+                    <span>{cartCount}</span>
                   </NavLink>
                 </li>
               </ul>

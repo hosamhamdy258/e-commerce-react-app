@@ -316,19 +316,18 @@ export default function Home({ productList }) {
       <div className="container mt-5">
         <div className="row">
           {productList &&
-            productList.map((item) => {
+            productList.slice(1, 13).map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="col-3 card mt-2"
+                  className="col-3 card m-2 bg-opacity-10 bg-primary"
                   style={{ height: "600px" }}
                 >
                   <NavLink className="nav-link" to={`/products/${item.id}`}>
                     <div>
                       <img
-                        id={item.id}
                         src={item.images[0]}
-                        className="card-img-top img-thumbnail"
+                        className="card-img-top"
                         alt={item.title}
                       />
                     </div>
