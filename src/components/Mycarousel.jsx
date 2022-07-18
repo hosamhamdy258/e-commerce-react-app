@@ -1,45 +1,51 @@
-import React from 'react'
-import Mycard from './Mycard'
-import Carousel from 'react-bootstrap/Carousel';
+import React, { Fragment } from "react";
+import Mycard from "./Mycard";
+import Carousel from "react-bootstrap/Carousel";
+import { NavLink } from "react-router-dom";
+import { Card } from "react-bootstrap";
+import { addProduct } from "../store/cartSlice";
+import { useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
 
-export default function Mycarousel() {
+
+export default function Mycarousel({ productList }) {
+  console.log(productList);
+  const dispatch = useDispatch();
+
+  const addButton = (item) => {
+    dispatch(addProduct(item));
+    // dispatch(getCart());
+  };
   return (
     <>
-    <Carousel>
-      <Carousel.Item>
-        <Mycard />
-        {/* <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"  
-        />
+      <Carousel className="bg-dark my-3">
+        <Carousel.Item>
+          <div className="container">
+            {productList.slice(1, 3).map((item) => {
+              return (
+              <Fragment>
+                <Mycard />
+                <span className="text-danger">hey</span>               
+                <span className="text-danger">allo</span>
+                <span className="text-danger">allo</span>
 
-        {/* <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption> */}
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        {/* <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption> */}
-      </Carousel.Item>
-    </Carousel>
+              </Fragment>)  
+            })} 
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+                <div className="container">
+                  <div><span className="text-danger">allo</span></div>
+                  <span className="text-danger">allo</span>
+                  <span className="text-danger">allo</span>
+                </div>
+        </Carousel.Item>
+        <Carousel.Item>
+                <span className="text-danger">allo</span>               
+                <span className="text-danger">allo</span>
+                <span className="text-danger">allo</span>
+        </Carousel.Item>
+      </Carousel>
     </>
-  )
+  );
 }

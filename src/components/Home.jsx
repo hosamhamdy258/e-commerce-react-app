@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Mycarousel from "./Mycarousel";
+import Carousel from "react-bootstrap/Carousel";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../store/cartSlice";
 import { NavLink } from "react-router-dom";
@@ -19,7 +20,7 @@ export default function Home({ productList }) {
     // dispatch(getCart());
   };
   return (
-    <>
+    <>  
       {/* Start Slider */}
 
       <section className="slider_section ">
@@ -204,7 +205,7 @@ export default function Home({ productList }) {
         })} */}
 
       {/* <!-- Slider Start  --> */}
-      <Mycarousel />
+      {/* <Mycarousel productList={productList}/> */}
       {/* <!-- Slider End  --> */}
 
       {/* <!-- Banners Start  --> */}
@@ -231,13 +232,13 @@ export default function Home({ productList }) {
           <div className="row text-start pt-5 pb-5 m-auto justify-content-sm-between">
             <div className="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">Season Sale</h2>
-              <p className="display-6 fw-normal  text-danger">
+              <p className="display-5 fw-normal  text-light">
                 Black-Friday Collection - 50% Off
               </p>
             </div>
             <div className="ban-item col-10 col-lg-4 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">NEW LapTops</h2>
-              <p className="display-6 fw-normal  text-danger">
+              <p className="display-5 fw-normal  text-light">
                 New Gaming Laptops
               </p>
             </div>
@@ -245,7 +246,7 @@ export default function Home({ productList }) {
               <h2 className="display-6 fw-normal text-light">
                 New Glasses Collection
               </h2>
-              <p className="display-6 fw-normal  text-danger">Best Offers</p>
+              <p className="display-4 fw-normal  text-light">Best Offers</p>
             </div>
           </div>
         </div>

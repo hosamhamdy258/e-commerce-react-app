@@ -66,11 +66,10 @@ export default function Regform() {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
               <Form.Text className="text-muted mb-3">
-              Already a user? Sign in  <Button className="mx-3" size="sm" variant="warning"> 
-                  <NavLink className="nav-link" to="/login">
-                    here
+              Already a user? 
+                  <NavLink className="nav-link mx-3 text-warning" to="/login">
+                  Sign-in here
                   </NavLink>               
-              </Button> 
               </Form.Text>
               <Button
                 variant="danger"
