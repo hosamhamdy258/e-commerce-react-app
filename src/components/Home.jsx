@@ -232,13 +232,13 @@ export default function Home({ productList }) {
           <div className="row text-start pt-5 pb-5 m-auto justify-content-sm-between">
             <div className="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">Season Sale</h2>
-              <p className="display-6 fw-normal  text-danger">
+              <p className="display-5 fw-normal  text-light">
                 Black-Friday Collection - 50% Off
               </p>
             </div>
             <div className="ban-item col-10 col-lg-4 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">NEW LapTops</h2>
-              <p className="display-6 fw-normal  text-danger">
+              <p className="display-5 fw-normal  text-light">
                 New Gaming Laptops
               </p>
             </div>
@@ -246,7 +246,7 @@ export default function Home({ productList }) {
               <h2 className="display-6 fw-normal text-light">
                 New Glasses Collection
               </h2>
-              <p className="display-6 fw-normal  text-danger">Best Offers</p>
+              <p className="display-4 fw-normal  text-light">Best Offers</p>
             </div>
           </div>
         </div>
