@@ -13,12 +13,10 @@ import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
 import { delCart, getCart } from "./store/cartSlice";
 import Regform from "./components/Regform";
-import Logform from "./components/Logform";
 
 function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.productsSlice);
-  // console.log(state.products);
 
   useEffect(() => {
     // dispatch(delCart());
@@ -30,17 +28,16 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home productList={state.products} />} />
+        <Route path="/" element={<Home productsSlice={state.products} />} />
         <Route path="/home" element={<Home productList={state.products} />} />
         <Route path="/products" element={<Products />} />
         <Route
           path="/products/:id"
           element={<ProductDetails productList={state.products} />}
         />
-        <Route path="/cart" element={<Cart productList={state.products} />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Regform />} />
-        <Route path="/test" element={<Logform />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

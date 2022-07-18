@@ -3,8 +3,9 @@ import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { removeProduct } from "../store/cartSlice";
 
-export default function Cart() {
+export default function Cart({ carttList }) {
   const state = useSelector((state) => state.cartSlice.cart);
+  console.log(state);
   const dispatch = useDispatch();
 
   const removeButton = (item) => {
@@ -12,7 +13,7 @@ export default function Cart() {
     // dispatch(getCart());
   };
   let totalPrice = 0;
-  state.forEach((element) => {
+  carttList.forEach((element) => {
     let itemPrice = element.count * element.price;
     totalPrice += itemPrice;
   });
@@ -31,8 +32,8 @@ export default function Cart() {
           </tr>
         </thead>
         <tbody>
-          {state &&
-            state.map((item) => {
+          {carttList &&
+            carttList.map((item) => {
               return (
                 <tr key={item.id}>
                   <td>

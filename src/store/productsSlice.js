@@ -38,4 +38,3 @@ const productsSlice = createSlice({
 });
 export default productsSlice.reducer;
 export const { productsApisetter } = productsSlice.actions;
-
