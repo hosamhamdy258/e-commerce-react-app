@@ -32,7 +32,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home productList={state.products} />} />
-        <Route path="/products" element={<Products />} />
+        
+        <Route path="/products" element={<Products productList={state.products}/>} />
+        <Route path="/Products/Smartphones" element={<Products productList={(state.products).filter(function (item) {return item.category ==='smartphones';})}/>} />
+        <Route path="/products/Laptops" element={<Products productList={(state.products).filter(function (item) {return item.category ==='laptops';})}/>} />
+        <Route path="/Products/Skincare" element={<Products productList={(state.products).filter(function (item) {return item.category ==='skincare';})}/>} />
+        <Route path="/Products/Groceries" element={<Products productList={(state.products).filter(function (item) {return item.category ==='groceries';})}/>} />
+        <Route path="/Products/Home-Decoration" element={<Products productList={(state.products).filter(function (item) {return item.category ==='home-decoration';})}/>} />
+        <Route path="/Products/Fragrances" element={<Products productList={(state.products).filter(function (item) {return item.category ==='fragrances';})}/>} />
+
         <Route
           path="/products/:id"
           element={<ProductDetails productList={state.products} />}
@@ -41,8 +49,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Regform />} />
         <Route path="/test" element={<Logform />} />
-
-        <Route path="*" element={<NotFound />} />
+  
+       
+      
       </Routes>
       <Footer />
     </div>
