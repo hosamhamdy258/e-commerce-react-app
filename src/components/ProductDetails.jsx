@@ -1,4 +1,3 @@
-
 import React from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -40,10 +39,18 @@ export default function ProductDetails() {
                         src={obj.images[2]}
                         className="my-3"
                       />
-                      <Card.Text>
+                      {/* <Card.Text>
                         <b>Description: </b>
                         {obj.description}
-                      </Card.Text>
+                      </Card.Text> */}
+                      <hr></hr>
+                      <blockquote className="blockquote mb-0">
+                        <p>
+                          {" "}
+                          <b>Description: </b>
+                          {obj.description}{" "}
+                        </p>
+                      </blockquote>
                     </td>
                     <td>
                       <Card.Img src={obj.images[2]} />
@@ -98,4 +105,3 @@ export default function ProductDetails() {
     </>
   );
 }
-
