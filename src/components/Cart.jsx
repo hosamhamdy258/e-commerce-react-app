@@ -1,9 +1,21 @@
-
 import React from "react";
 import { Table } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { removeProduct } from "../store/cartSlice";
 
-export default function Cart({ productList }) {
-  console.log(productList);
+export default function Cart() {
+  const state = useSelector((state) => state.cartSlice.cart);
+  const dispatch = useDispatch();
+
+  const removeButton = (item) => {
+    dispatch(removeProduct(item));
+    // dispatch(getCart());
+  };
+  let totalPrice = 0;
+  state.forEach((element) => {
+    let itemPrice = element.count * element.price;
+    totalPrice += itemPrice;
+  });
 
   return (
     <>
@@ -19,12 +31,13 @@ export default function Cart({ productList }) {
           </tr>
         </thead>
         <tbody>
-          {productList &&
-            productList.map((item) => {
+          {state &&
+            state.map((item) => {
               return (
-                <tr>
+                <tr key={item.id}>
                   <td>
                     <svg
+                      onClick={() => removeButton(item)}
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
@@ -41,8 +54,8 @@ export default function Cart({ productList }) {
                   </td>
                   <td>{item.title}</td>
                   <td>{item.price}</td>
-                  <td>{item.title}</td>
-                  <td>{item.title}</td>
+                  <td>{item.count}</td>
+                  <td>{item.count * item.price}</td>
                 </tr>
               );
             })}
@@ -73,7 +86,7 @@ export default function Cart({ productList }) {
           <table className="table">
             <tr>
               <td>Cart Subtotal</td>
-              <td id="total1">0 EGP</td>
+              <td id="total1">{totalPrice} EGP</td>
             </tr>
             <tr>
               <td>Shipping</td>
@@ -82,7 +95,7 @@ export default function Cart({ productList }) {
             <td>
               <strong>Total</strong>
             </td>
-            <td id="total2">0 EGP</td>
+            <td id="total2">{totalPrice} EGP</td>
           </table>
           <div className="d-grid gap-2 p-3">
             <button className="btn btn-info" type="button">

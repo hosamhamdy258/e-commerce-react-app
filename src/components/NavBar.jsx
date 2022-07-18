@@ -1,16 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { loginUser, logoutUser } from "../store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
-import Button from "react-bootstrap/esm/Button";
-
-import { loginUser, logoutUser } from "../store/authSlice";
-import { useDispatch, useSelector } from "react-redux";
-import NavLink from "react-bootstrap/esm/NavLink";
-
+import { NavLink } from "react-router-dom";
 export default function NavBar() {
   const state = useSelector((state) => state.authSlice);
   const state2 = useSelector((state) => state.cartSlice);
@@ -69,12 +65,12 @@ export default function NavBar() {
                   {/* <NavLink className="nav-link" to="/About us">About us</NavLink> */}
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/">
+                  <NavLink className="nav-link" to="/login">
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/Home">
+                  <NavLink className="nav-link" to="/cart">
                     <i className="fa-solid fa-cart-plus"></i>
                   </NavLink>
                 </li>

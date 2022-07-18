@@ -19,7 +19,7 @@ function App() {
   // console.log(state.products);
 
   useEffect(() => {
-    dispatch(delCart());
+    // dispatch(delCart());
     // dispatch(getCart());
     dispatch(getProducts());
   }, [dispatch]);
@@ -31,7 +31,10 @@ function App() {
         <Route path="/" element={<Home productList={state.products} />} />
         <Route path="/home" element={<Home productList={state.products} />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route
+          path="/products/:id"
+          element={<ProductDetails productList={state.products} />}
+        />
         <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />

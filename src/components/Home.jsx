@@ -237,7 +237,9 @@ export default function Home({ productList }) {
             </div>
             <div className="ban-item col-10 col-lg-4 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">NEW LapTops</h2>
-              <p className="display-6 fw-normal  text-danger">New Gaming Laptops</p>
+              <p className="display-6 fw-normal  text-danger">
+                New Gaming Laptops
+              </p>
             </div>
             <div className="ban-item col-10 col-lg-3 pt-3 pb-5 m-auto mt-5">
               <h2 className="display-6 fw-normal text-light">
@@ -270,7 +272,7 @@ export default function Home({ productList }) {
         </div>
       </section>
 
-      <secction
+      <section
         id="newsletter"
         className="d-flex align-items-center mb-5 justify-content-between pt-4 pb-4"
       >
@@ -290,7 +292,7 @@ export default function Home({ productList }) {
                     type="email"
                     className="p-3 form-control mb-3 d-block m-auto"
                     id="Email"
-                    value=""
+                    defaultValue=""
                   />
                 </div>
 
@@ -298,14 +300,14 @@ export default function Home({ productList }) {
                   <input
                     className="d-block m-auto outline-danger p-3 mb-3 fw-bold"
                     type="button"
-                    value="Sign Up"
+                    defaultValue="Sign Up"
                   />
                 </div>
               </form>
             </div>
           </div>
         </div>
-      </secction>
+      </section>
       {/* <!-- Newsletter End  --> */}
 
       {/* end arrival section */}
@@ -316,13 +318,22 @@ export default function Home({ productList }) {
           {productList &&
             productList.map((item) => {
               return (
-                <div className="col-3 card mt-2" style={{ height: "600px" }}>
-                  <img
-                    id={item.id}
-                    src={item.images[0]}
-                    className="card-img-top clickToDetails2 img-thumbnail"
-                    alt={item.title}
-                  />
+                <div
+                  key={item.id}
+                  className="col-3 card mt-2"
+                  style={{ height: "600px" }}
+                >
+                  <NavLink className="nav-link" to={`/products/${item.id}`}>
+                    <div>
+                      <img
+                        id={item.id}
+                        src={item.images[0]}
+                        className="card-img-top img-thumbnail"
+                        alt={item.title}
+                      />
+                    </div>
+                  </NavLink>
+
                   <div className="card-body">
                     <h5 className="card-title slideProductName">
                       {item.title}
@@ -331,7 +342,10 @@ export default function Home({ productList }) {
                       {item.description}
                     </Card.Text>
                     <h4 className="card-text card-price">{item.price} EGP</h4>
-                    <Button variant="primary card-cart">
+                    <Button
+                      variant="primary card-cart"
+                      onClick={() => addButton(item)}
+                    >
                       <i className="fa-solid fa-cart-plus"></i>
                     </Button>
                   </div>
