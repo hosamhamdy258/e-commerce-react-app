@@ -28,10 +28,20 @@ export default function ProductDetails({ productList }) {
                         src={item.images[2]}
                         className="my-3"
                       />
-                      <Card.Text>
+                      {/* <Card.Text>
                         <b>Description: </b>
                         {item.description}
                       </Card.Text>
+                        {obj.description}
+                      </Card.Text> */}
+                      <hr></hr>
+                      <blockquote className="blockquote mb-0">
+                        <p>
+                          {" "}
+                          <b>Description: </b>
+                          {item.description}{" "}
+                        </p>
+                      </blockquote>
                     </td>
                     <td>
                       <Card.Img src={item.images[2]} />
