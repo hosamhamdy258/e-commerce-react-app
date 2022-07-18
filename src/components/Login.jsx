@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import React, { useRef, Fragment } from "react";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   const email = useRef(null);
@@ -25,13 +26,9 @@ export default function Login() {
     <Fragment>
       <div className="container-fluid my-md-5">
         <div className="row">
-          <div className="col-md-6 mt-md-5">
-            <br />
-            <br />
-            <br />
-            <br />
+          <div id="slogan" className=" col-md-6 mt-md-5 d-none d-md-block ">
             <span className="display-1 mt-5"> Easy Shop</span>
-            <span className="text-danger"> A shop that cares about you</span>
+            <span className="text-danger "> A shop that cares about you</span>
           </div>
           <div className="col-md-4 my-5 container-fluid">
               {/* <div className="mb-2">
@@ -47,7 +44,7 @@ export default function Login() {
               className="my-md-5 d-grid gap-2 p-3 bg-light"
             >
               <Form.Text className="text-muted mb-3">
-                Welcome, please enter your info:
+                Welcome, please enter your login info:
               </Form.Text>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -69,7 +66,12 @@ export default function Login() {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
               <Form.Text className="text-muted mb-3">
-                Not a user? Signup<Button variant="warning"> here</Button>
+                Not a user? Signup
+                <Button variant="warning" className="mx-3" size="sm">
+                  <NavLink className="nav-link" to="/register">
+                    here
+                  </NavLink> 
+                  </Button>
               </Form.Text>
               <Button
                 variant="danger"

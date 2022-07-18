@@ -1,29 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 export default function Logform() {
+        const [checked, setChecked] = useState(false);
+        const [radioValue, setRadioValue] = useState('1');
+      
+        const radios = [
+          { name: 'Active', value: '1' },
+          { name: 'Radio', value: '2' },
+          { name: 'Radio', value: '3' },
+        ];
+      
   return (
     <>
-    <p>
-        <a className="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-        <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-        <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-        </p>
-        <div className="row">
-        <div className="col">
-            <div className="collapse multi-collapse" id="multiCollapseExample1">
-            <div className="card card-body">
-                Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
-            </div>
-        </div>
-        <div className="col">
-            <div className="collapse multi-collapse" id="multiCollapseExample2">
-            <div className="card card-body">
-                Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
-            </div>
-        </div>
-        </div>
+    <ButtonGroup className="mb-2">
+        <ToggleButton
+          id="toggle-check"
+          type="checkbox"
+          variant="secondary"
+          checked={checked}
+          value="1"
+          onChange={(e) => setChecked(e.currentTarget.checked)}
+        >
+          Checked
+        </ToggleButton>
+      </ButtonGroup>
+      <br />
+      <ButtonGroup className="mb-2">
+        {radios.map((radio, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`radio-${idx}`}
+            type="radio"
+            variant="secondary"
+            name="radio"
+            value={radio.value}
+            checked={radioValue === radio.value}
+            onChange={(e) => setRadioValue(e.currentTarget.value)}
+          >
+            {radio.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
+      <br />
+      <ToggleButton
+        className="mb-2"
+        id="toggle-check"
+        type="checkbox"
+        variant="outline-primary"
+        checked={checked}
+        value="1"
+        onChange={(e) => setChecked(e.currentTarget.checked)}
+      >
+        Checked
+      </ToggleButton>
+      <br />
+      <ButtonGroup>
+        {radios.map((radio, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`radio-${idx}`}
+            type="radio"
+            variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+            name="radio"
+            value={radio.value}
+            checked={radioValue === radio.value}
+            onChange={(e) => setRadioValue(e.currentTarget.value)}
+          >
+            {radio.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
     </>
   )
 }
