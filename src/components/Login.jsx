@@ -66,12 +66,10 @@ export default function Login() {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
               <Form.Text className="text-muted mb-3">
-                Not a user? Signup
-                <Button variant="warning" className="mx-3" size="sm">
-                  <NavLink className="nav-link" to="/register">
-                    here
+                Not a user? 
+                  <NavLink className="nav-link mx-3 text-warning" to="/register">
+                  Sign-up here
                   </NavLink> 
-                  </Button>
               </Form.Text>
               <Button
                 variant="danger"

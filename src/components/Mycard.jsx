@@ -5,8 +5,8 @@ import React from 'react'
 
 export default function Mycard() {
   return (
-    <div>
-     <Card style={{ width: '18rem' }}>
+    <>
+     <Card style={{ width: '15rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -17,6 +17,6 @@ export default function Mycard() {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
-    </div>
+    </>
   )
 }

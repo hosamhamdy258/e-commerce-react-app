@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Mycarousel from "./Mycarousel";
+import Carousel from "react-bootstrap/Carousel";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../store/cartSlice";
 import { NavLink } from "react-router-dom";
@@ -19,7 +20,7 @@ export default function Home({ productList }) {
     // dispatch(getCart());
   };
   return (
-    <>
+    <>  
       {/* Start Slider */}
 
       <section className="slider_section ">
@@ -204,7 +205,7 @@ export default function Home({ productList }) {
         })} */}
 
       {/* <!-- Slider Start  --> */}
-      <Mycarousel />
+      {/* <Mycarousel productList={productList}/> */}
       {/* <!-- Slider End  --> */}
 
       {/* <!-- Banners Start  --> */}
