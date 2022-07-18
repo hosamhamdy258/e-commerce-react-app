@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
 import { delCart, getCart } from "./store/cartSlice";
+import Regform from "./components/Regform";
+import Logform from "./components/Logform";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +39,9 @@ function App() {
         />
         <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Regform />} />
+        <Route path="/test" element={<Logform />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
