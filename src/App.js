@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
 import { delCart, getCart } from "./store/cartSlice";
+import Regform from "./components/Regform";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart productList={state.products} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Regform />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

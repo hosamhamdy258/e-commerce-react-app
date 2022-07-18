@@ -1,26 +1,25 @@
-import Button from "react-bootstrap/Button";
-import React, { useRef, Fragment } from "react";
+import React, { Fragment, useRef } from 'react'
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
+import { useDispatch } from 'react-redux';
 
-export default function Login() {
-  const email = useRef(null);
-  const password = useRef(null);
-
-  const dispatch = useDispatch();
-
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    // const data = {
-    //   email: email.current.value,
-    //   password: password.current.value
-    // };
-    // dispatch()
-    console.log(email.current.value);
-    email.current.value = null;
-    password.current.value = null;
-  };
-
+export default function Regform() {
+    const email = useRef(null);
+    const password = useRef(null);
+  
+    const dispatch = useDispatch();
+  
+    const handlesubmit = (e) => {
+      e.preventDefault();
+      // const data = {
+      //   email: email.current.value,
+      //   password: password.current.value
+      // };
+      // dispatch()
+      console.log(email.current.value);
+      email.current.value = null;
+      password.current.value = null;
+    };
   return (
     <Fragment>
       <div className="container-fluid my-md-5">
@@ -36,10 +35,10 @@ export default function Login() {
           <div className="col-md-4 my-5 container-fluid">
               {/* <div className="mb-2">
                 <Button variant="danger" size="lg" >
-                  Login
+                Login
                 </Button>{' '}
                 <Button variant="secondary" size="lg" >
-                  Register
+                Register
                 </Button>
               </div> */}
           <Form
@@ -69,7 +68,7 @@ export default function Login() {
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
               <Form.Text className="text-muted mb-3">
-                Not a user? Signup<Button variant="warning"> here</Button>
+              Already a user? Sign in  <Button variant="warning"> here</Button>
               </Form.Text>
               <Button
                 variant="danger"
@@ -86,5 +85,5 @@ export default function Login() {
         </div>
       </div>
     </Fragment>
-  );
+  )
 }
